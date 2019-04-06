@@ -1,0 +1,132 @@
+@custom-media --mq-medium (max-width: 800px);
+@custom-media --mq-small (max-width: 550px);
+
+
+:root {
+	--primary-color: #336e4d;
+	--text-on-light: #151620;
+	--text-on-dark: #ffffff;
+	--background-color: #ffffff;
+	
+	--main-spacing: 64px;
+	--spacing: 40px;
+	--header-height: 80px;
+	--hero-spacing: 240px;
+	--centered-width: 50%;
+}
+
+@media (--mq-medium) {
+	:root {
+		--main-spacing: 40px;
+		--spacing: 32px;
+		--hero-spacing: 120px;
+		--centered-width: 75%;
+	}
+}
+@media (--mq-small) {
+	:root {
+		--main-spacing: 32px;
+		--hero-spacing: 80px;
+	}
+}
+
+
+body {
+	background-color: var(--background-color);
+	color: var(--text-on-light);
+}
+
+header {
+	background-color: transparent;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	height: var(--header-height);
+	padding: 0 var(--spacing);
+	
+	position: absolute;
+	width: 100%;
+}
+
+section.grid, section.centered {
+	margin: var(--spacing);
+}
+
+section.hero {
+	padding: var(--hero-spacing) var(--spacing);
+	color: var(--text-on-dark);
+	text-align: left;
+	
+	background-image: image-set(
+		"img/lidye-300571-unsplash.jpg" 1x,
+		"img/lidye-300571-unsplash.jpg" 2x
+	);
+	background-size: cover;
+	background-position: center bottom;
+}
+
+section.hero.menu {
+	background-image: image-set(
+		"img/green-wall.jpg" 1x,
+		"img/green-wall@2x.jpg" 2x
+	);
+	
+	background-size: cover;
+	background-position: center;
+}
+section.hero h2 {
+	margin-bottom: 10px;
+}
+
+section.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: var(--spacing);
+	align-items: center;
+}
+
+section.grid p {
+	padding: 20px 0;
+}
+
+section.centered {
+	text-align: center;
+	width: var(--centered-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+.button {
+	display: inline-block;
+	color: var(--text-on-dark);
+	border: 1px solid var(--text-on-dark);
+	padding: 10px 15px;
+}
+
+.button-primary {
+	background-color: var(--primary-color);
+}
+
+@media (--mq-small) {
+	section.grid {
+		grid-template-columns: 1fr;
+	}
+	
+	header img {
+		width: 160px;
+	}
+	
+	.button {
+		padding: 8px 15px;
+	}
+}
+
+
+
+
+
+
