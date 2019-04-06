@@ -90,6 +90,9 @@ section.grid {
 section.grid p {
 	padding: 20px 0;
 }
+section.grid img {
+	width: 100%;
+}
 
 section.centered {
 	text-align: center;
